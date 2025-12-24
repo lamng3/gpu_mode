@@ -26,6 +26,7 @@ CUDA is async so cannot use Python time module. You can only measure the overhea
 - Pageable memory on the host, basically RAM, which can be swap in and out of RAM.
 
 **PyTorch profilder trace**
+
 ![PyTorch Profiler Trace](pytorch_profiler/assets/pt_profiler_default_trace.png)
 
 
