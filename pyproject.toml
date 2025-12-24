@@ -1,0 +1,9 @@
+[project]
+name = "gpu-mode"
+version = "0.1.0"
+description = "GPU Mode - CUDA and PyTorch learning project"
+requires-python = ">=3.8"
+dependencies = [
+    "torch>=2.0.0",
+]
+
