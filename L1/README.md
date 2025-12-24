@@ -25,9 +25,14 @@ CUDA is async so cannot use Python time module. You can only measure the overhea
 - **Example:** `aten::to` will be dispatched to `cudaMemcpyAsync`, creating GPU kernel `Memcpy HtoD (Pageable -> Device)`.
 - Pageable memory on the host, basically RAM, which can be swap in and out of RAM.
 
-**PyTorch profilder trace**
+**PyTorch profilder default trace**
 
 ![PyTorch Profiler Trace](pytorch_profiler/assets/pt_profiler_default_trace.png)
+
+**PyTorch profilder trace with warmups**
+
+![PyTorch Profiler Trace With Warmups](pytorch_profiler/assets/pt_profiler_trace.png)
+
 
 
 
