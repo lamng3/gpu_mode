@@ -20,3 +20,13 @@ CUDA is async so cannot use Python time module. You can only measure the overhea
 
 **Observation:** aten is a low-level C++ dialect for PyTorch. Looking at the profiling trace, `square` is not a function that does anything, and the main computation lies in function `pow` that sets the value to 2 for square. The `a * a` operation uses `aten::mul` and is slightly faster (3.333ms) compared to `torch.square` (3.331ms) and `a ** 2` (3.339ms) on GPU. Why this phenomenon happens might be rooted in the fact that `mul` is a more popular operation that people spend time optimizing.
 
+**PyTorch profiler**: This is a visual profiler, giving you a Chrome trace in JSON format.
+- `Memcpy HtoD (Pageable -> Device)` function: Host to Device copy, which is equivalent to `.cuda()` where sending tensor to GPU.
+- **Example:** `aten::to` will be dispatched to `cudaMemcpyAsync`, creating GPU kernel `Memcpy HtoD (Pageable -> Device)`.
+- Pageable memory on the host, basically RAM, which can be swap in and out of RAM.
+
+**PyTorch profilder trace**
+![PyTorch Profiler Trace](pytorch_profiler/assets/pt_profiler_default_trace.png)
+
+
+
