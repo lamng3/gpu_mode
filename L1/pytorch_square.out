@@ -1,3 +1,10 @@
+PyTorch version: 2.9.0+cu126
+CUDA available: True
+CUDA version: 12.6
+GPU device: Tesla T4
+------------
+
+
 tensor([1., 4., 9.])
 tensor([1., 4., 9.])
 tensor([1., 4., 9.])
